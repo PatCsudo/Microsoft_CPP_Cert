@@ -1,9 +1,10 @@
 #include <iostream>
+/* First Lab, Task 1 for C++ Programming 
+Fundamentals */
 
-// Main function
 int main()
 {
-	// Output text
-	std::cout << "Hello, world!\n" << std::endl;
-	return 0;
+    std::cout << "Hello, world!\n" << std::endl;
+
+    return 0;
 }
