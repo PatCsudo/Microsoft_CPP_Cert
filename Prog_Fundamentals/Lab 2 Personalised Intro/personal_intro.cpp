@@ -26,13 +26,18 @@ int main()
     //Display header
     std::cout << "===========================================\
 =============" << std::endl;
-    std::cout << "             PERSONAL INTRODUCTION         " << std::endl;
+    // The tab command, \t, is implemented
+    std::cout << "\t\tPERSONAL INTRODUCTION\t\t" << std::endl;
+    
     std::cout << "===========================================\
 =============" << std::endl;
 
     //Basic info
-    std::cout << std::left << std::setw(25) << "Name: Patrick Connell" << \
-std::endl;
+
+    /*\033 is equivalent to the ESC command. [31m writes the text in bold 
+    red font. [0m sets the colour back to the default setting. */
+    std::cout << std::left << std::setw(25) << "\033[1;31mName: Patrick \
+Connell\033[0m" << std::endl;
     std::cout << std::left << std::setw(25) << "Role: Hotel Night Porter\
 " << std::endl;
 
@@ -77,8 +82,8 @@ Scientist or a Lecturer again." << std::endl;
 "<< std::endl;
     std::cout << std::left << std::setw(25) << "I know the C++ language up\
 to the use of arrays, and the reading files and\n writing of files. I have\
-also read notes on pointers. However, my learning used the  1998 Standard.\
-I would like to learn Modern C++ and gain a recognizable\n certificate in \
+also read notes on pointers. However, my learning\n used the 1998 Standard.\
+I would like to learn Modern C++ \nand gain a recognizable certificate in \
 doing so.\n\n" << std::endl;
     std::cout << "\n\n" << std::endl;
 
@@ -99,8 +104,7 @@ fluid dynamics." << std::endl;
 introduction!" << std::endl;
 
     //Display footer
-    std::cout << "=========================================================\
-============" << std::endl;
+    std::cout << "================================================" << std::endl;
 
 
 
