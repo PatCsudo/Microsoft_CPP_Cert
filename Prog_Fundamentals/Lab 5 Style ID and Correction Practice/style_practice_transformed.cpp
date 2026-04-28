@@ -35,9 +35,9 @@ twenty-five" << endl;
 
 int main(){
 
-    SumOfTwoNumbers sum_of_two_numbers; // the variable sum_of_two_numbers.
+    SumOfTwoNumbers sumTwoNumbers; // the variable sum_of_two_numbers.
     
-    sum_of_two_numbers.AddTwoNumbers(); /* Calculates the sum and prints the
+    sumTwoNumbers.AddTwoNumbers(); /* Calculates the sum and prints the
     result to the console along with a comment on its magnitude relative to 
     the number 25 */
     return 0;
