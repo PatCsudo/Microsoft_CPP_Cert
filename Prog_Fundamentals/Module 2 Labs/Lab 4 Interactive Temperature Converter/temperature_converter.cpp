@@ -72,7 +72,8 @@ int main() {
                 cout << "Enter temperature in Celsius: ";
                 cin >> inputTemp;
                 if (inputTemp < ABSOLUTE_ZERO_C) {
-                    cout << "The celsius temperature cannot be below -273.15 \u00b0C!" << endl;
+                    cout << "The celsius temperature cannot be below -273.15 °C!" << endl;
+                    cout << "Try Again!" << endl;
                 }
                 result = celsiusToFahrenheit(inputTemp);
                 cout << fixed << setprecision(2);
@@ -87,7 +88,6 @@ int main() {
                 if (result < ABSOLUTE_ZERO_C) {
                     cout << "The celsius temperature cannot be below -273.15 °C!" << endl;
                     cout << "Try Again!" << endl;
-                    return -999.0;
                 }
                 cout << fixed << setprecision(2);
                 cout << inputTemp << " °F = " << result << " °C" << endl;
@@ -99,7 +99,7 @@ int main() {
                 cin >> inputTemp;
                 if (inputTemp < ABSOLUTE_ZERO_C) {
                     cout << "The celsius temperature cannot be below -273.15 °C!" << endl;
-                    return -999.0;
+                    cout << "Try Again!" << endl;
                 }
                 result = celsiusToKelvin(inputTemp);
                 cout << fixed << setprecision(2);
@@ -112,7 +112,7 @@ int main() {
                 cin >> inputTemp;
                 if (inputTemp < 0) {
                     cout << "The kelvin temperature cannot be negative!" << endl;
-                    return -999.0;
+                    cout << "Try Again!" << endl;
                 }
                 result = kelvinToCelsius(inputTemp);
                 cout << fixed << setprecision(2);
@@ -134,7 +134,7 @@ int main() {
                 cin >> inputTemp;
                 if (inputTemp < 0) {
                     cout << "The kelvin temperature cannot be negative!" << endl;
-                    return -999.0;
+                    cout << "Try Again!" << endl;
                 }
                 result = kelvinToFahrenheit(inputTemp);
                 cout << fixed << setprecision(2);
@@ -172,7 +172,7 @@ double fahrenheitToCelsius(double fahrenheit) {
 double celsiusToKelvin(double celsius) {
     if (celsius < ABSOLUTE_ZERO_C) {
         cout << "ERROR! Entered temperature is less than absolute zero!" << endl;
-        return -999.0;
+        cout << "Try Again!" << endl;
     }
     return celsius - ABSOLUTE_ZERO_C;
 
@@ -195,7 +195,7 @@ double kelvinToFahrenheit(double kelvin) {
     // First convert Kelvins to Celsius, then convert Celsius to Fahrenheit
     if (kelvin < 0) {
         cout << "Error! Kelvin temperature cannot be negative!" << endl;
-        return 999.0;
+        cout << "Try Again!" << endl;
     }
     double celsius = kelvinToCelsius(kelvin);
     return celsiusToFahrenheit(celsius);
