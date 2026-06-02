@@ -71,9 +71,11 @@ int main() {
             case 1: // Celsius to Fahrenheit
                 cout << "Enter temperature in Celsius: ";
                 cin >> inputTemp;
-                if (inputTemp < ABSOLUTE_ZERO_C) {
+                while (inputTemp < ABSOLUTE_ZERO_C) {
                     cout << "The celsius temperature cannot be below -273.15 °C!" << endl;
                     cout << "Try Again!" << endl;
+                    cout << "Enter temperature in Celsius: ";
+                    cin >> inputTemp;
                 }
                 result = celsiusToFahrenheit(inputTemp);
                 cout << fixed << setprecision(2);
@@ -85,21 +87,26 @@ int main() {
                 cout << "Enter temperature in Fahrenheit: ";
                 cin >> inputTemp;
                 result = fahrenheitToCelsius(inputTemp);
-                if (result < ABSOLUTE_ZERO_C) {
+                while (result < ABSOLUTE_ZERO_C) {
                     cout << "The celsius temperature cannot be below -273.15 °C!" << endl;
                     cout << "Try Again!" << endl;
+                    cout << "Enter temperature in Fahrenheit: ";
+                    cin >> inputTemp;
+                    result = fahrenheitToCelsius(inputTemp);
                 }
                 cout << fixed << setprecision(2);
                 cout << inputTemp << " °F = " << result << " °C" << endl;
                 displayTemperatureFacts(result); // result is in celsius - display interesting facts about it
                 break;
             
-            case 3: // Celsius to Kelvin
+            case 3: // Celsius to Kelvins
                 cout << "Enter temperature in Celsius: ";
                 cin >> inputTemp;
-                if (inputTemp < ABSOLUTE_ZERO_C) {
+                while (inputTemp < ABSOLUTE_ZERO_C) {
                     cout << "The celsius temperature cannot be below -273.15 °C!" << endl;
                     cout << "Try Again!" << endl;
+                    cout << "Enter temperature in Celsius: ";
+                    cin >> inputTemp;
                 }
                 result = celsiusToKelvin(inputTemp);
                 cout << fixed << setprecision(2);
@@ -107,12 +114,14 @@ int main() {
                 displayTemperatureFacts(inputTemp); // inputTemp is in celsius
                 break;
 
-            case 4: // Kelvin to Celsius
-                cout << "Enter temperature in Kelvin: ";
+            case 4: // Kelvins to Celsius
+                cout << "Enter temperature in Kelvins: ";
                 cin >> inputTemp;
-                if (inputTemp < 0) {
+                while (inputTemp < 0) {
                     cout << "The kelvin temperature cannot be negative!" << endl;
                     cout << "Try Again!" << endl;
+                    cout << "Enter temperature in Kelvins: ";
+                    cin >> inputTemp;
                 }
                 result = kelvinToCelsius(inputTemp);
                 cout << fixed << setprecision(2);
@@ -124,17 +133,26 @@ int main() {
                 cout << "Enter temperature in Fahrenheit: ";
                 cin >> inputTemp;
                 result = fahrenheitToKelvin(inputTemp);
+                while (result < 0) {
+                    cout << "The Kelvin temperature cannot be negative!" << endl;
+                    cout << "Try Again!" << endl;
+                    cout << "Enter temperature in Fahrenheit greater than the previous input : ";
+                    cin >> inputTemp;
+                    result = fahrenheitToKelvin(inputTemp);
+                }
                 cout << fixed << setprecision(2);
                 cout << inputTemp << " °F = " << result << " K" << endl;
                 displayTemperatureFacts(kelvinToCelsius(result)); // result is in celsius - display interesting facts about it
                 break;
 
             case 6: // Kelvin to Fahrenheit
-                cout << "Enter temperature in Kelvin: ";
+                cout << "Enter temperature in Kelvins: ";
                 cin >> inputTemp;
-                if (inputTemp < 0) {
+                while (inputTemp < 0) {
                     cout << "The kelvin temperature cannot be negative!" << endl;
                     cout << "Try Again!" << endl;
+                    cout << "Enter temperature in Kelvins: ";
+                    cin >> inputTemp;
                 }
                 result = kelvinToFahrenheit(inputTemp);
                 cout << fixed << setprecision(2);
