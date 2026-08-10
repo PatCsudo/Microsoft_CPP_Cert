@@ -30,7 +30,9 @@ int main() {
         if (playerChoice == "left") {
             cout << "\nYou discover a hidden treasure chest!" << endl;
             cout << "Inside you find 100 gold coins." << endl;
-            break;
+            break; // use a break statement to break out of if statement and while loop
+            // upon a valid choice being implemented.
+            // https://cppreference.com/cpp/language/break
         } 
     
     
