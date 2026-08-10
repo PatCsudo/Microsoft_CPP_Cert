@@ -9,14 +9,14 @@ int main() {
 
     string playerChoice;
 
-    playerChoice = "make decision"; // set playerChoice to "make decision" to allow for using a
+    playerChoice = "make 1st decision"; // set playerChoice to "make decision" to allow for using a
     // while loop in order to issue correction upon invalid choice.
 
     cout << "Welcome to the Adventure Game!" << endl;
     cout << "You stand at a crossroads in a mysterious forest." << endl;
     cout << "Do you want to go 'left', 'right' or 'forward'? ";
 
-    while (playerChoice == "make decision") { 
+    while (playerChoice == "make 1st decision") { 
         
         // create while loop to allow for incorrect entry
         // and correction
@@ -57,11 +57,11 @@ int main() {
     
         }
 
-        playerChoice = "make decision";
+        playerChoice = "make 1st decision";
          
     }
 
-    playerChoice = "next decision"; // set playerChoice to "next decision" to allow for using a
+    playerChoice = "make 2nd decision"; // set playerChoice to "next decision" to allow for using a
     // while loop in order to issue correction upon invalid choice.
 
     cout << "\nYou now have to make a second choice. " << endl;
@@ -69,7 +69,7 @@ int main() {
     cout << "You cannot stand still or go backwards. " << endl;
     cout << "What is your choice? ";
 
-    while (playerChoice == "next decision") {
+    while (playerChoice == "make 2nd decision") {
 
         // create while loop to allow for incorrect entry
         // and correction. The same logic as that applied above.
@@ -115,7 +115,7 @@ int main() {
             cout << "or staying put! ";
         }
 
-        playerChoice = "next decision";
+        playerChoice = "make 2nd decision";
         
 
     }
