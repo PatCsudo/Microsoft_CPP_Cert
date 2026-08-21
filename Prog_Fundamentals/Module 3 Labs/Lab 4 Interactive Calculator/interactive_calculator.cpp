@@ -99,36 +99,62 @@ int main() {
         else if (choice == 6) {// Exponentiation
             cout << "Enter base number: ";
             cin >> num1;
-            // check if the base number entered is an odd negative number
-            // The pow function cannot raise an arbitrary negative number to a power
-            /* if (num1 < 0){
-                cout << "Error: cannot raise odd negative numbers to a power." << endl;
-                cout << "Enter an even negative number or an arbitrary positive real number: ";
-                cin >> num1;
-            } */
+            
             cout << "Enter the second number, i.e., the exponent: ";
             cin >> num2;
 
-
+            
 
             // treat separate cases
 
             // num1 >= 0 is true there is no problem
 
             if (num1 >=0 ) {
-
-                cout << "All okay here!" << endl;
+                result = pow(num1, num2);
             }
 
-            else {
-                cout << "Since the base number you entered is negative, further tests " 
-                     << "are required before determining the result." << endl;
+            /* A negative number can be raised to a power and give
+                a real number as the result in different cases. These are
+                
+                1. If the number is raised to an even integral power.
+                2. If the number is odd and it is raised to an even
+                or odd integral power.
+
+                Apart from these cases one will be exponeniation a
+                negative number to a power with a non-zero decimal
+                part. This results in a complex number, which the 
+                pow function in cmath is not equipped to deal with.
+                
+                The trouble with coding cases 1 and 2 is that num1 and num2
+                are of type double, whereas the powers will be integers.
+                
+                In cases 1 and 2 we need to focus on the exponent.
+
+                This problem mentioned above might be circumvented by testing
+                if the integer part of num2 is equal to num2. */ 
+                
+                /* If the decimal part of num2 is zero then pow(num1, num2)
+                where num1 < 0 will give a meaningful result. */
+
+            int intPartOfnum2 = static_cast<int>(num2);
+            double decimalPartOfnum2 = num2 - intPartOfnum2;
+
+            if ( (num1 < 0) && ((decimalPartOfnum2 == 0)) ) {
+                result = pow(num1,num2);
             }
-            
-            result = pow(num1,num2);
-            cout << "Result: the value of " << num1 << " raised to the power of " 
+
+            if ( (num1 >= 0) || ((num1 < 0) && (decimalPartOfnum2 == 0)) )
+
+                cout << "\nResult: the value of " << num1 << " raised to the power of " 
                 << num2 << " , i.e., pow" <<"(" << num1 << "," << num2 << ") is " 
                 << result << endl;
+
+            else {
+                    cout << "\nA real number cannot be obtained for" << endl;
+                    cout << "pow(num1, num2) because the valued entered for" << endl;
+                    cout << "num1 is negative and the decimal part of the value" << endl;
+                    cout << "entered for num2 is non-zero." << endl;
+                }
             
         }
 
