@@ -33,6 +33,12 @@ int main() {
         // Get the user's choice
         cin >> choice;
 
+        while ((choice < 1) || (choice > 9)) {
+
+            cout << "Error! Invalid entry: choose a number between 1 and 9: ";
+            cin >> choice;
+        }
+
         // Process the choice using conditional statements
 
         // variables to store the operands
@@ -143,11 +149,12 @@ int main() {
                 result = pow(num1,num2);
             }
 
-            if ( (num1 >= 0) || ((num1 < 0) && (decimalPartOfnum2 == 0)) )
+            if ( (num1 >= 0) || ((num1 < 0) && (decimalPartOfnum2 == 0)) ) {
 
                 cout << "\nResult: the value of " << num1 << " raised to the power of " 
                 << num2 << " , i.e., pow" <<"(" << num1 << "," << num2 << ") is " 
                 << result << endl;
+            }
 
             else {
                     cout << "\nA real number cannot be obtained for" << endl;
